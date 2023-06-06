@@ -1,0 +1,25 @@
+.search-container{
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    align-items: center;
+    
+}
+.search-bar{
+    width: 95%;
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+.search-icon{
+    position: absolute;
+    left: 52rem;
+}
+
+.arrow-icon{
+   padding-right: 0.5rem;
+   
+}
+li{
+
+    text-decoration: none;
+}

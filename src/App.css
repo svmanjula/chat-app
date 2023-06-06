@@ -1,0 +1,36 @@
+:root {
+    --gray-text: rgba(156, 163, 175, 1);
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(45deg, purple, blue);
+    font-size: 12px;
+
+
+
+
+}
+
+.chatApp {
+   width: 20vw;
+   height: 75vh;
+    background: white;
+    border-radius: 1.5rem;
+    padding: 4rem 2rem 2rem 2rem;
+
+
+}
+
+@media screen and (max-width:500px) {
+    .chatApp {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+
+    }
+}

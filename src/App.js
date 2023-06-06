@@ -1,19 +1,16 @@
-import './App.css';
-import {jsonData} from "./backend/dummyData"
-
+import "./App.css";
+import { jsonData } from "./backend/dummyData";
+import MessasesPage from "./pages/MessagesPage/MessasesPage";
 
 function App() {
-
-  const data = jsonData.people
+  const data = jsonData.people;
 
   return (
     <div className="App">
-{
-  data.map((data)=>{
-   return <div> {data.name} </div>
-  })
-}
-
+      <div className="chatApp">
+        <MessasesPage data={data}  />
+       
+      </div>
     </div>
   );
 }
