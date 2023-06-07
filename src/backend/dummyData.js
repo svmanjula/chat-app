@@ -4,7 +4,10 @@ export const jsonData = {
       "id": 1,
       "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
       "name": "John Doe",
-      "timestamp": "2023-06-04T10:15:30Z",
+      "timestamp": "15:30",
+      "newmessage":"how are you,thanks",
+      
+
       "messages": [
         { "sender": "John Doe", "text": "Hello!", "timestamp": "2023-06-04T10:15:30Z" },
         { "sender": "Alice", "text": "Hi, how are you?", "timestamp": "2023-06-04T10:20:45Z" },
@@ -16,7 +19,9 @@ export const jsonData = {
       "id": 2,
       "avatar": "https://randomuser.me/api/portraits/women/2.jpg",
       "name": "Jane Smith",
-      "timestamp": "2023-06-04T11:45:00Z",
+      "timestamp": "11:45",
+      "newmessage":"Good morning  Smith",
+      
       "messages": [
         { "sender": "Jane Smith", "text": "Hi there!", "timestamp": "2023-06-04T11:45:00Z" },
         { "sender": "Bob", "text": "Hey, how's it going?", "timestamp": "2023-06-04T11:50:30Z" },
@@ -28,7 +33,9 @@ export const jsonData = {
       "id": 3,
       "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
       "name": "Sarah Williams",
-      "timestamp": "2023-06-04T13:20:00Z",
+      "timestamp": "13:20",
+      "newmessage":"Hello Williams",
+
       "messages": [
         { "sender": "Sarah Williams", "text": "Hello!", "timestamp": "2023-06-04T13:20:00Z" },
         { "sender": "David", "text": "Hi Sarah, how's your day?", "timestamp": "2023-06-04T13:25:30Z" },
@@ -40,7 +47,9 @@ export const jsonData = {
       "id": 4,
       "avatar": "https://randomuser.me/api/portraits/women/4.jpg",
       "name": "Michael Brown",
-      "timestamp": "2023-06-04T14:50:00Z",
+      "timestamp": "7:50",
+      "newmessage":"Hey! how are you doing?",
+
       "messages": [
         { "sender": "Michael Brown", "text": "Hey!", "timestamp": "2023-06-04T14:50:00Z" },
         { "sender": "Emily", "text": "Hi Michael, how are you doing?", "timestamp": "2023-06-04T14:55:30Z" },
