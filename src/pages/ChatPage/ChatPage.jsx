@@ -99,12 +99,7 @@ const ChatPage = ({ data }) => {
         })}
       </div>
       <div className="text-input-container">
-        <form
-          onSubmit={(e) => {
-            handleSubmit(e);
-          }}
-        >
-          <button
+      <button
             className="mailer-icon-container"
             onClick={(e) => {
               handleSubmit(e);
@@ -112,6 +107,12 @@ const ChatPage = ({ data }) => {
           >
             <SiMinutemailer className="mailer-icon" />
           </button>
+        <form
+          onSubmit={(e) => {
+            handleSubmit(e);
+          }}
+        >
+          
 
           <textarea
             placeholder="Type new message"
@@ -119,7 +120,8 @@ const ChatPage = ({ data }) => {
             value={inputText}
             onChange={(e) => handleChange(e)}
             onInput={handleTextareaResize}
-            onBlur={handleTextareaBlur}
+            onFocus={handleTextareaBlur}
+            // onKeyDown={(e)=>{handleSubmit(e)}}
 
           />
         </form>

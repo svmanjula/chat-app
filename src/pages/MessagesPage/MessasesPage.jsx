@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { RiSearchLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
@@ -6,10 +6,33 @@ import "./MessagesPage.css";
 
 const MessasesPage = ({ data }) => {
   const [toggleSearch, setToggleSearch] = useState(false);
+
+  const [filteredData, setFilteredData] = useState(data);
+  const [searchQuery, setSearchQuery] = useState("");
+
   console.log(data);
+
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  useEffect(() => {
+    const debounceTimer = setTimeout(() => {
+      const filtered = data.filter((person) =>
+        person.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredData(filtered);
+    }, [3000]);
+
+    return () => {
+      clearTimeout(debounceTimer);
+    };
+  }, [data, searchQuery]);
+
+  console.log(filteredData)
+
   return (
-    <div >
-      
+    <div>
       {/* search bar */}
 
       {toggleSearch ? (
@@ -20,7 +43,11 @@ const MessasesPage = ({ data }) => {
               setToggleSearch(false);
             }}
           />
-          <input className="search-bar" placeholder="search here" />
+          <input
+            className="search-bar"
+            placeholder="search here"
+            onChange={(e) => handleChange(e)}
+          />
           <RiSearchLine className="search-icon" />
         </div>
       ) : (
@@ -79,13 +106,15 @@ const MessasesPage = ({ data }) => {
                   <h5 className="disabled">{person.newmessage}</h5>
                 </div>
                 <div className="flex-item ">
-                 
                   {person.id % 2 !== 0 ? (
-                    <div className="new-text-container">  <div> {person.timestamp}</div>
-                    <div className="text-number"> {person.id}</div></div>)
-                    :( <div> {person.timestamp}</div>)
-                  
-                }
+                    <div className="new-text-container">
+                      {" "}
+                      <div> {person.timestamp}</div>
+                      <div className="text-number"> {person.id}</div>
+                    </div>
+                  ) : (
+                    <div> {person.timestamp}</div>
+                  )}
                 </div>
               </div>
               {person.id < 4 && <hr className="hr-line flex-item-hr" />}
