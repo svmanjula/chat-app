@@ -1,5 +1,4 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,32 +12,28 @@
     height: 100vh;
     background: linear-gradient(45deg, purple, blue);
     font-size: 12px;
-
-
-
-
 }
 
 .chatApp {
-  min-width: 25vw;
- height: 85vh;
-    background: white;
+    width: 25vw;
+    height: 85vh;
+    background-color: white;
     border-radius: 1.5rem;
-    padding: 4rem 2rem 2rem 2rem;
     overflow: scroll;
+    padding: 4rem 2rem 2rem 2rem
+}
 
+input {
+    outline: none;
+    border: 0.2px solid gray;
 
 }
+
 
 @media screen and (max-width:950px) {
     .chatApp {
         width: 100vw;
         height: 100vh;
         border-radius: 0;
-
-
-
-
-
     }
 }

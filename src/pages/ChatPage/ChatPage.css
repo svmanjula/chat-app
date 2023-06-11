@@ -1,0 +1,125 @@
+.person-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: start;
+    background-color: white;
+    
+   
+}
+.message-container{
+    padding: 2rem;
+}
+.flex-item-dots {
+    margin-left: auto;
+}
+
+.back-arrow-icon {
+    font-size: 1.3rem;
+}
+.chat-container{
+    margin-top: 3rem;
+}
+
+
+.circle-active {
+    background-color: rgb(96, 220, 96);
+    width: 0.2rem;
+    border-radius: 50%;
+    border: 2px solid rgb(97, 202, 97);
+    display: inline-block;
+    position: relative;
+    bottom: 0.3rem;
+}
+
+.chat-message-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+}
+
+.avatar {
+    width: 1.75rem;
+}
+
+.text-input {
+    width: 100%;
+    border-radius: 3rem;
+    background-color: rgb(238, 234, 234);
+    resize: none;
+    overflow-y: hidden;
+    font-family: inherit;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    height: auto;
+    border: none;
+    outline: none;
+
+    
+
+    
+
+}
+textarea::placeholder{
+    opacity: 0.5;
+}
+
+
+.mailer-icon {
+    color: white;
+    width: 1rem;
+}
+
+.mailer-icon-container {
+    background: rgb(101, 5, 101);
+    border-radius: 50%;
+    display: inline-block;
+    padding: 0.2rem;
+    position: relative;
+    left: 16rem;
+    border: none;
+    top:2.1rem;
+
+}
+
+.chat-message,
+.receiver,
+.sender-text {
+    padding: 0.75rem;
+    border-radius: 0rem 1rem 1rem 1rem;
+    border: 0.1px solid grey;
+    text-align: center;
+}
+
+.receiver {
+    background-color: purple;
+    color: white;
+    border-radius: 1rem 1rem 0rem 1rem;
+
+
+}
+
+.sender-text {
+    background-color: rgb(249, 239, 249);
+}
+
+.flex-item-receiver {
+    margin-left: auto;
+    text-align: end;
+   max-width: 15rem;
+}
+
+.sender {
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.timestamp {
+    margin-top: 0.5rem;
+    color: gray;
+}
+/* .text-input-container{
+    position: fixed;
+    bottom: 5rem;
+
+} */

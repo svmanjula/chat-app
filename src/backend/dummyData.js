@@ -9,10 +9,14 @@ export const jsonData = {
       
 
       "messages": [
-        { "sender": "John Doe", "text": "Hello!", "timestamp": "2023-06-04T10:15:30Z" },
+        { "sender": "John Doe", "text": "😅", "timestamp": "2023-06-04T10:15:30Z" },
         { "sender": "Alice", "text": "Hi, how are you?", "timestamp": "2023-06-04T10:20:45Z" },
         { "sender": "John Doe", "text": "I'm good, thanks!", "timestamp": "2023-06-04T10:25:15Z" },
-        { "sender": "Alice", "text": "That's great!", "timestamp": "2023-06-04T10:30:20Z" }
+        { "sender": "Alice", "text": "That's great!", "timestamp": "2023-06-04T10:30:20Z" },
+        { "sender": "John Doe", "text": "😅", "timestamp": "2023-06-04T10:15:30Z" },
+        { "sender": "Alice", "text": "Hi, how are you?", "timestamp": "2023-06-04T10:20:45Z" },
+        { "sender": "John Doe", "text": "I'm good, thanks!", "timestamp": "2023-06-04T10:25:15Z" },
+        
       ]
     },
     {
@@ -24,9 +28,13 @@ export const jsonData = {
       
       "messages": [
         { "sender": "Jane Smith", "text": "Hi there!", "timestamp": "2023-06-04T11:45:00Z" },
-        { "sender": "Bob", "text": "Hey, how's it going?", "timestamp": "2023-06-04T11:50:30Z" },
+        { "sender": "Alice", "text": "Hey, how's it going?", "timestamp": "2023-06-04T11:50:30Z" },
         { "sender": "Jane Smith", "text": "Not bad, thanks!", "timestamp": "2023-06-04T11:55:15Z" },
-        { "sender": "Bob", "text": "Good to hear!", "timestamp": "2023-06-04T12:00:45Z" }
+        { "sender": "Alice", "text": "Good to hear!", "timestamp": "2023-06-04T12:00:45Z" },
+        { "sender": "Jane Smith", "text": "Hi there!", "timestamp": "2023-06-04T11:45:00Z" },
+        { "sender": "Alice", "text": "Hey, how's it going?", "timestamp": "2023-06-04T11:50:30Z" },
+        { "sender": "Jane Smith", "text": "Not bad, thanks!", "timestamp": "2023-06-04T11:55:15Z" },
+        
       ]
     },
     {
@@ -38,9 +46,12 @@ export const jsonData = {
 
       "messages": [
         { "sender": "Sarah Williams", "text": "Hello!", "timestamp": "2023-06-04T13:20:00Z" },
-        { "sender": "David", "text": "Hi Sarah, how's your day?", "timestamp": "2023-06-04T13:25:30Z" },
+        { "sender": "Alice", "text": "Hi Sarah, how's your day?", "timestamp": "2023-06-04T13:25:30Z" },
         { "sender": "Sarah Williams", "text": "It's going well, thank you!", "timestamp": "2023-06-04T13:30:15Z" },
-        { "sender": "David", "text": "That's great to hear!", "timestamp": "2023-06-04T13:35:00Z" }
+        { "sender": "Alice", "text": "That's great to hear!", "timestamp": "2023-06-04T13:35:00Z" },
+        { "sender": "Sarah Williams", "text": "Hello!", "timestamp": "2023-06-04T13:20:00Z" },
+        { "sender": "Alice", "text": "Hi Sarah, how's your day?", "timestamp": "2023-06-04T13:25:30Z" },
+        { "sender": "Sarah Williams", "text": "It's going well, thank you!", "timestamp": "2023-06-04T13:30:15Z" },
       ]
     },
     {
@@ -52,9 +63,12 @@ export const jsonData = {
 
       "messages": [
         { "sender": "Michael Brown", "text": "Hey!", "timestamp": "2023-06-04T14:50:00Z" },
-        { "sender": "Emily", "text": "Hi Michael, how are you doing?", "timestamp": "2023-06-04T14:55:30Z" },
+        { "sender": "Alice", "text": "Hi Michael, how are you doing?", "timestamp": "2023-06-04T14:55:30Z" },
         { "sender": "Michael Brown", "text": "I'm doing great, thanks!", "timestamp": "2023-06-04T15:00:45Z" },
-        { "sender": "Emily", "text": "Glad to hear that!", "timestamp": "2023-06-04T15:05:00Z" }
+        { "sender": "Alice", "text": "Glad to hear that!", "timestamp": "2023-06-04T15:05:00Z" },
+        { "sender": "Michael Brown", "text": "Hey!", "timestamp": "2023-06-04T14:50:00Z" },
+        { "sender": "Alice", "text": "Hi Michael, how are you doing?", "timestamp": "2023-06-04T14:55:30Z" },
+        { "sender": "Michael Brown", "text": "I'm doing great, thanks!", "timestamp": "2023-06-04T15:00:45Z" },
       ]
     }
   ]
