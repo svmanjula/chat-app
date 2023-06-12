@@ -4,35 +4,54 @@ import { RiSearchLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import "./MessagesPage.css";
 
-const MessasesPage = ({ data }) => {
+const MessagesPage = ({ userData }) => {
   const [toggleSearch, setToggleSearch] = useState(false);
-
-  const [filteredData, setFilteredData] = useState(data);
+  const [filteredData, setFilteredData] = useState(userData);
   const [searchQuery, setSearchQuery] = useState("");
-
-  console.log(data);
 
   const handleChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
+  //debounce function for search
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
-      const filtered = data.filter((person) =>
-        person.name.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+      const filtered = userData.filter((user) => {
+        const filteredName = user.name
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
+        const filteredMessages = user.messages.some((message) =>
+          message.text.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        return filteredName || filteredMessages;
+      });
       setFilteredData(filtered);
-    }, [3000]);
+    }, [1000]);
 
     return () => {
       clearTimeout(debounceTimer);
     };
-  }, [data, searchQuery]);
+  }, [userData, searchQuery, filteredData]);
 
-  console.log(filteredData)
+  // useEffect(() => {
+  //   const handleOutsideClick = (e) => {
+  //     if (!e.target.closest(".search-bar")) {
+  //       setFilteredData([...userData]);
+  //       setSearchQuery("");
+  //     }
+  //   };
+
+  //   document.body.addEventListener("click", handleOutsideClick);
+
+  //   return () => {
+  //     document.body.removeEventListener("click", handleOutsideClick);
+  //   };
+  // }, [userData]);
+
+  console.log(filteredData);
 
   return (
-    <div>
+    <div className="message-page" >
       {/* search bar */}
 
       {toggleSearch ? (
@@ -46,6 +65,7 @@ const MessasesPage = ({ data }) => {
           <input
             className="search-bar"
             placeholder="search here"
+            input={searchQuery}
             onChange={(e) => handleChange(e)}
           />
           <RiSearchLine className="search-icon" />
@@ -73,7 +93,7 @@ const MessasesPage = ({ data }) => {
 
       <h4 className="disabled title-fav">Favourites </h4>
       <div className="container-fav">
-        {data.map((person) => {
+        {filteredData.map((person) => {
           return (
             <div key={person.id}>
               <Link to={`/chat/${person.id}`}>
@@ -85,30 +105,34 @@ const MessasesPage = ({ data }) => {
                   <img src={person.avatar} alt="/avatar" />
                 )}
               </Link>
-
-              <h5 className="person-name"> {person.name.slice(0, 5)}</h5>
+              <Link to={`/chat/${person.id}`} className="link">
+                <h5 className="person-name"> {person.name.slice(0, 5)}</h5>
+              </Link>
             </div>
           );
         })}
       </div>
       <hr className="hr-line" />
       {/* messages container */}
-      {data.map((person) => {
+      {filteredData.map((person) => {
         return (
           <div key={person.id} className="messages-container">
             <Link to={`/chat/${person.id}`}>
               <img src={person.avatar} alt="/avatar" />
             </Link>
             <div className="flex-grow-item">
-              <div className="message-container">
+              <div className="message-text-container">
                 <div>
-                  <h3>{person.name} </h3>
-                  <h5 className="disabled">{person.newmessage}</h5>
+                  <Link to={`/chat/${person.id}`} className="link">
+                    <h3>{person.name} </h3>
+                  </Link>
+                  <h5 className="disabled">
+                    {person.messages[person.messages.length - 1].text}
+                  </h5>
                 </div>
                 <div className="flex-item ">
                   {person.id % 2 !== 0 ? (
                     <div className="new-text-container">
-                      {" "}
                       <div> {person.timestamp}</div>
                       <div className="text-number"> {person.id}</div>
                     </div>
@@ -126,4 +150,4 @@ const MessasesPage = ({ data }) => {
   );
 };
 
-export default MessasesPage;
+export default MessagesPage;

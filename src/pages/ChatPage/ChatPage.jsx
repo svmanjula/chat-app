@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { BsThreeDots } from "react-icons/bs";
 import { SiMinutemailer } from "react-icons/si";
 import "./ChatPage.css";
 
-const ChatPage = ({ data }) => {
+const ChatPage = ({ userData }) => {
   const { id } = useParams();
-
-  const person = data.find((data) => data.id === Number(id));
-
+  const textAreaRef = useRef(null);
+  const person = userData.find((data) => data.id === Number(id));
   const [inputText, setInputText] = useState();
   const [messages, setMessages] = useState([...person.messages]);
 
@@ -19,9 +18,9 @@ const ChatPage = ({ data }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputText !== " ") {
+    if (inputText) {
       const newMessage = {
-        sender: "Alice",
+        receiver: "Alice",
         text: inputText,
         timestamp: new Date().toISOString(),
       };
@@ -37,29 +36,41 @@ const ChatPage = ({ data }) => {
             timestamp: new Date().toISOString(),
           };
         };
-        setMessages((prevMessgaes) => [...prevMessgaes, newMessageReply()]);
+        setMessages((prevMessages) => [...prevMessages, newMessageReply()]);
       }, [2000]);
 
       setMessages([...newArray]);
       setInputText("");
     }
   };
-  console.log(messages);
+  useEffect(() => {
+    
+      textAreaRef.current.scrollIntoView();
+  
+  
+  }, [messages]);
+
   const handleTextareaResize = (e) => {
-    e.target.style.height = "auto"; // Reset the height to auto
+    e.target.style.height = "auto";
     e.target.style.height = `${e.target.scrollHeight}px`; // Set the height based on content
   };
-  const handleTextareaBlur = (e) => {
-    e.target.style.height = ""; // Reset the height to its default value
+
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 13 && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit(e);
+    }
   };
+  // const handleTextareaBlur = (e) => {
+  //   e.target.style.height = ""; // Reset the height to its default value
+  // };
 
   return (
-    <div>
+    <div className="message-container">
       <div className="person-container">
         <Link to="/" className="link">
-          <HiOutlineArrowLeft className="back-arrow-icon" />{" "}
+          <HiOutlineArrowLeft className="back-arrow-icon" />
         </Link>
-
         <div className="person-info-container">
           <h2> {person.name} </h2>
           <div>
@@ -72,7 +83,7 @@ const ChatPage = ({ data }) => {
         {messages.map((message) => {
           return (
             <div key={message.timestamp} className="chat-message-container">
-              {message.sender === "Alice" ? (
+              {message.receiver ? (
                 <div className=" flex-item-receiver">
                   <div className="receiver"> {message.text}</div>
 
@@ -99,30 +110,30 @@ const ChatPage = ({ data }) => {
         })}
       </div>
       <div className="text-input-container">
-      <button
-            className="mailer-icon-container"
-            onClick={(e) => {
-              handleSubmit(e);
-            }}
-          >
-            <SiMinutemailer className="mailer-icon" />
-          </button>
+        <button
+          className="mailer-icon-container"
+          onClick={(e) => {
+            handleSubmit(e);
+          }}
+        >
+          <SiMinutemailer className="mailer-icon" />
+        </button>
         <form
           onSubmit={(e) => {
             handleSubmit(e);
           }}
         >
-          
-
           <textarea
+            ref={textAreaRef}
             placeholder="Type new message"
             className="text-input"
             value={inputText}
             onChange={(e) => handleChange(e)}
-            onInput={handleTextareaResize}
-            onFocus={handleTextareaBlur}
-            // onKeyDown={(e)=>{handleSubmit(e)}}
-
+            onKeyDown={(e) => handleKeyDown(e)}
+            onInput={(e) => {
+              handleTextareaResize(e);
+            }}
+            // onBlur={handleTextareaBlur}
           />
         </form>
       </div>

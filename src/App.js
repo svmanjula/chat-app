@@ -1,23 +1,26 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { jsonData } from "./backend/dummyData";
+import { data } from "./data/dummyData";
 import ChatPage from "./pages/ChatPage/ChatPage";
-import MessasesPage from "./pages/MessagesPage/MessasesPage";
+import MessagesPage from "./pages/MessagesPage/MessasesPage";
 
 function App() {
-  const data = jsonData.people;
-
-  
-
+  const userData = data.people;
   return (
     <div className="App">
       <div className="chatApp">
-        
-       <Routes>
-        <Route exact path="/" element ={ <MessasesPage data={data}  />} />
-        <Route exact path="/chat/:id" element ={<ChatPage data={data} />} />
-
-       </Routes>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<MessagesPage userData={userData} />}
+          />
+          <Route
+            exact
+            path="/chat/:id"
+            element={<ChatPage userData={userData} />}
+          />
+        </Routes>
       </div>
     </div>
   );

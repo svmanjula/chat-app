@@ -5,6 +5,11 @@
    justify-content: space-between;
    font-size: large;
    align-items: center;
+   position: relative;
+
+}
+.message-page{
+   padding: 4rem 2rem 2rem 2rem;
 
 }
 
@@ -13,12 +18,15 @@
    height: 2rem;
    border-radius: 0.5rem;
    padding-left: 0.5rem;
+
 }
 
 .search-icon {
    position: absolute;
-   left: 53rem;
    color: gray;
+   right: 4rem;
+   position: sticky;
+
 }
 
 .arrow-icon {
@@ -83,7 +91,7 @@ img {
    justify-content: space-between;
 } */
 
-.message-container {
+.message-text-container {
    display: flex;
    padding: 1rem 0 1rem 0;
    align-items: center;

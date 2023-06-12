@@ -20,7 +20,7 @@
     background-color: white;
     border-radius: 1.5rem;
     overflow: scroll;
-    padding: 4rem 2rem 2rem 2rem
+   
 }
 
 input {
@@ -28,10 +28,16 @@ input {
     border: 0.2px solid gray;
 
 }
+.link{
+    color: inherit;
+    text-decoration: none;
+  }
+  
 
 
-@media screen and (max-width:950px) {
+@media screen and (max-width:800px) {
     .chatApp {
+
         width: 100vw;
         height: 100vh;
         border-radius: 0;
