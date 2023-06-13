@@ -39,4 +39,5 @@ textarea::placeholder{
 .text-input-container{
     position: relative;
     min-height: 3rem;
+    padding-top: 1.5rem;
 }

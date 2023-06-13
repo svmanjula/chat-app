@@ -38,9 +38,10 @@ input {
 @media screen and (max-width:800px) {
     .chatApp {
         width: 100%;
-        min-width:25vw;
+        min-width:27vw;
         height: 100vh;
         border-radius: 0;
     }
+    
 }
 

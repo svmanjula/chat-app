@@ -35,7 +35,7 @@ const TextInputBar = ({ person, messages, setMessages }) => {
           };
         };
         setMessages((prevMessages) => [...prevMessages, newMessageReply()]);
-      }, [2000]);
+      }, [1000]);
 
       setMessages([...newArray]);
       setInputText("");
