@@ -1,0 +1,42 @@
+.text-input {
+    width: 100%;
+    border-radius: 3rem;
+    background-color: rgb(238, 234, 234);
+    resize: none;
+    overflow-y: hidden;
+    font-family: inherit;
+    padding: 1rem 2.5rem 0.3rem 1.5rem;
+    height: auto;
+    border: none;
+    outline: none;
+}
+
+textarea::placeholder{
+    opacity: 0.5;
+   
+}
+
+.mailer-icon {
+    color: white;
+    width: 1rem;
+}
+
+.mailer-icon-container {
+    background: rgb(101, 5, 101);
+    border-radius: 50%;
+    display: inline-block;
+    padding: 0.2rem;
+    border: none;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+   }
+
+.timestamp {
+    margin-top: 0.5rem;
+    color: gray;
+}
+.text-input-container{
+    position: relative;
+    min-height: 3rem;
+}

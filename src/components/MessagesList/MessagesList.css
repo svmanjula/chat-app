@@ -1,0 +1,62 @@
+.message-text-container {
+    display: flex;
+    padding: 1rem 0 1rem 0;
+    align-items: center;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem 0 2rem 1rem;
+ }
+ 
+ .flex-grow-item{
+    flex-grow: 1;
+ }
+ 
+ .messages-container{
+   display: flex;
+   align-items: center;
+ }
+ 
+ .flex-item {
+    margin-left: auto;
+ }
+ 
+ .text-number {
+    border-radius: 50%;
+    background-color: rgb(144, 3, 144);
+    color: white;
+    text-align: center;
+    width: 1rem;
+    font-size: 0.5rem;
+    padding: 0.2rem;
+ }
+ 
+ .new-text-container {
+    font-weight: bolder;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+ 
+ }
+ 
+ .hr-line{
+    color: lightgray;
+    opacity: 0.2;
+ }
+
+ .disabled {
+   color: gray;
+}
+.heading-disabled {
+   opacity: 30%;
+}
+
+
+.person-name {
+   padding: 0.5rem;
+}
+
+img {
+   border-radius: 50%;
+   width: 3rem;
+   margin: 0.2rem;
+}

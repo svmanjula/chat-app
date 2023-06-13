@@ -1,0 +1,12 @@
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    width: 100%;
+ }
+ 
+ ul li{
+    font-size: larger;
+    font-weight: bolder;
+ }

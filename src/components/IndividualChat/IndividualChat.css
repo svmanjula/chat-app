@@ -1,0 +1,73 @@
+.person-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: start;
+    background-color: white;
+    position: sticky;
+    top: 0rem;
+    padding-top: 4rem;
+}
+
+.flex-item-dots {
+    margin-left: auto;
+}
+
+.back-arrow-icon {
+    font-size: 1.3rem;
+}
+
+.chat-container {
+    margin-top: 3rem;
+
+}
+
+.chat-message,
+.receiver,
+.sender-text {
+    padding: 0.75rem;
+    border-radius: 0rem 1rem 1rem 1rem;
+    border: 0.1px solid grey;
+    text-align: center;
+}
+
+.receiver {
+    background-color: purple;
+    color: white;
+    border-radius: 1rem 1rem 0rem 1rem;
+}
+
+.sender-text {
+    background-color: rgb(249, 239, 249);
+}
+
+.flex-item-receiver {
+    margin-left: auto;
+    text-align: end;
+    max-width: 15rem;
+}
+
+.sender {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.circle-active {
+    background-color: rgb(96, 220, 96);
+    width: 0.2rem;
+    border-radius: 50%;
+    border: 2px solid rgb(97, 202, 97);
+    display: inline-block;
+    position: relative;
+    bottom: 0.3rem;
+}
+
+.chat-message-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.avatar {
+    width: 1.75rem;
+}
